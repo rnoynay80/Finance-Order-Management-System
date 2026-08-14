@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "commit-agent": "node scripts/commit-agent.js"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
