@@ -2,7 +2,7 @@
 
 ## Our updated project vision
 
-An agentic Finance & Order Management System with a full-stack application, REST APIs, intelligent business agents, and an integrated AI-assisted quality engineering framework covering UI, API, end-to-end, and agent testing.
+An agentic Finance & Order Management System with a full-stack application, REST APIs, intelligent business agents, and an integrated AI-assisted quality engineering framework covering UI, API, end-to-end testing and analysis.
 
 ---
 
@@ -97,6 +97,44 @@ That's a much more sophisticated portfolio project than simply saying:
           Validation      Risk Agent    Reconciliation
              Agent                         Agent
 ```
+
+### Our current architecture
+
+```
+Finance-Order-Management-System
+│
+├── app
+│   │
+│   ├── backend          ← TypeScript + Node.js + Express
+│   │
+│   ├── frontend         ← TypeScript (we'll build this)
+│   │
+│   └── database         ← Database/schema/scripts
+│
+└── tests
+    │
+    ├── api              ← Playwright + TypeScript
+    ├── e2e              ← Playwright + TypeScript
+    └── ui               ← Playwright + TypeScript
+```
+
+### So what are we using?
+
+| Component | Technology |
+|-----------|-----------|
+| Backend | TypeScript |
+| Runtime | Node.js |
+| API framework | Express |
+| Frontend | TypeScript + React (planned) |
+| API testing | Playwright + TypeScript |
+| UI/E2E testing | Playwright + TypeScript |
+| Database | We'll decide shortly |
+| CI/CD | GitHub Actions |
+| AI/Agents | We'll introduce later |
+
+**TypeScript is the common language across almost the entire project.**
+
+---
 
 ### QA Architecture
 
