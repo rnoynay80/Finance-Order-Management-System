@@ -55,4 +55,14 @@ export default defineConfig({
       use: { ...devices['Desktop Safari'] },
     },
   ],
+
+  // Start the FOMS backend automatically before running tests
+  webServer: {
+    command: 'npm run dev',
+    cwd: 'app/backend',
+    url: 'http://localhost:3000/api/health',
+    reuseExistingServer: !process.env.CI,
+  },
 });
+
+
