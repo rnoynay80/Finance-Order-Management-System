@@ -1,7 +1,3 @@
-Absolutely! 😄 And yes — **we should turn the plan into a proper project specification**. That way, this document becomes our **single source of truth**. Whenever you come back and say *"continue the project"* or give me an instruction, we can work from these specifications.
-
-I'd call it:
-
 # QA Finance & Order Management System
 
 ### Full-Stack Application + Playwright TypeScript QA Automation Framework
@@ -998,41 +994,4 @@ I suggest we don't call the project "finished" until we can demonstrate:
              └─────────┬─────────┘
                        │
                    Database
-                       │
-                       ▼
-                PLAYWRIGHT
-                       │
-        ┌──────────────┼──────────────┐
-        │              │              │
-       UI             API            E2E
-        │              │              │
-        └──────────────┼──────────────┘
-                       │
-                 Cross Browser
-                       │
-                 GitHub Actions
-                       │
-              Scheduled Regression
-                       │
-                 HTML Reporting
 ```
-
-That's a **substantial QA engineering portfolio project**.
-
----
-
-## 🚦 And now we start
-
-I recommend we **freeze the current Playwright tutorial work** rather than deleting it. It gives us a record of where you started.
-
-Then we'll create the application foundation.
-
-### Our immediate next task:
-
-**Create the new monorepo structure and initialize the application.**
-
-We'll do this **one command at a time in VS Code**, just like we did with Playwright. I won't dump 30 commands on you at once. We'll build it together, verify each step, and commit meaningful milestones to GitHub.
-
-So when you're ready, our first build step is:
-
-> **Phase 2 — Step 8: Create the QA Finance & Order Management application structure.** 🚀
