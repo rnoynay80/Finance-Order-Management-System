@@ -2,7 +2,7 @@
 
 This README contains the top-level project information and Quality Engineering focus for the Finance & Order Management System.
 
-1. Project Overview
+## **1. Project Overview**
 
 Finance & Order Management System (FOMS) is a full-stack business application designed to manage finance and order-related processes within an organisation.
 
@@ -24,7 +24,7 @@ Core business capabilities:
 
 The project is also being developed with a strong Quality Engineering (QE) focus. Automated testing is integrated throughout the development lifecycle rather than being treated as a separate activity.
 
-2. Objectives
+## **2. Objectives**
 
 Application Development
 
@@ -59,7 +59,7 @@ Professional / Portfolio Objective
 
 The project is intended to demonstrate enterprise-style Quality Engineering practices including test strategy, risk-based testing, API automation, database validation, E2E testing, security testing, performance testing, CI/CD quality gates, test reporting, and production readiness.
 
-3. Technology Stack
+## **3. Technology Stack**
 
 Backend
 
@@ -120,7 +120,7 @@ Version Control
 | Git | Source control | ✅ Implemented |
 | GitHub | Source code repository | ✅ Implemented |
 
-4. Current Architecture
+## **4. Current Architecture**
 
 The current implementation focuses on the backend API and automated API testing.
 
@@ -186,7 +186,7 @@ Running 6 tests using 4 workers
 
 6 passed (856ms)
 
-5. Project Structure
+## **5. Project Structure**
 
 (Short summary of current layout)
 
@@ -195,7 +195,7 @@ Running 6 tests using 4 workers
 - .github — CI configuration (planned)
 - package.json, tsconfig.json, playwright.config.ts
 
-6. Getting Started
+## **6. Getting Started**
 
 Quick steps to run the project locally (backend + tests):
 
@@ -204,20 +204,20 @@ Quick steps to run the project locally (backend + tests):
 3. Verify health: `curl http://localhost:3000/health`
 4. Run API tests: `npx playwright test`
 
-7. Running Tests
+## **7. Running Tests**
 
 - API tests are implemented with Playwright's API testing in TypeScript.
 - Playwright is configured to start or reuse the backend using the `webServer` option.
 - Current test result: 6 passing tests.
 
-8. Current API Endpoints
+## **8. Current API Endpoints**
 
 - GET /health — Health check endpoint
 - POST /api/auth/login — Login (authentication foundation)
 
 (Additional business APIs are planned: sales-orders, purchase-orders, transfers)
 
-9. Quality Engineering
+## **9. Quality Engineering**
 
 Quality is integrated across the development lifecycle with a staged approach:
 
@@ -225,7 +225,7 @@ Requirements → Development → API Testing → Database Validation → Integra
 
 Automated testing will be expanded alongside features so new functionality is developed with corresponding automated validation.
 
-10. Current Status
+## **10. Current Status**
 
 Current Phase: Phase 2 — Authentication & Authorization
 
@@ -252,7 +252,7 @@ Currently Working On
 - Authorization
 - Authentication test coverage
 
-11. Roadmap
+## **11. Roadmap**
 
 Roadmap → [ROADMAP.md](ROADMAP.md)
 
