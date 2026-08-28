@@ -4,12 +4,13 @@ Project Roadmap
 A full-stack Finance & Order Management System designed to demonstrate modern software engineering, API development, database integration, automated testing, security, CI/CD, and Quality Engineering practices.
 
 
-🏗️ Phase 0 — Project Foundation
-Objective
+## 🏗️ Phase 0 — Project Foundation
+
+**Objective**
 
 Set up the project structure, development environment, Git repository, and engineering standards.
 
-Tasks
+**Tasks**
 
 - Create GitHub repository
 - Create project structure
@@ -25,8 +26,9 @@ Tasks
 - Define coding standards
 - Define branching strategy
 
-Target Structure
+**Target Structure**
 
+```
 Finance-Order-Management-System/
 │
 ├── app/
@@ -49,13 +51,15 @@ Finance-Order-Management-System/
 ├── package.json
 ├── README.md
 └── ROADMAP.md
+```
 
-🔧 Phase 1 — Backend API Foundation
-Objective
+## 🔧 Phase 1 — Backend API Foundation
+
+**Objective**
 
 Build the core backend API using Node.js, TypeScript, and Express.
 
-Tasks
+**Tasks**
 
 - Create Express server
 - Configure TypeScript
@@ -73,8 +77,9 @@ Tasks
 - Add environment configuration
 - Add API versioning
 
-Target Architecture
+**Target Architecture**
 
+```
 Client
   │
   ▼
@@ -91,13 +96,15 @@ Repositories
   │
   ▼
 Database
+```
 
-🔐 Phase 2 — Authentication & Authorization
-Objective
+## 🔐 Phase 2 — Authentication & Authorization
+
+**Objective**
 
 Implement secure user authentication and role-based authorization.
 
-Tasks
+**Tasks**
 
 - Create login endpoint
 - Test valid login
@@ -116,15 +123,17 @@ Tasks
 - Test forbidden requests
 - Test expired/invalid tokens
 
-Example Roles
+**Example Roles**
+
 - ADMIN
 - FINANCE
 - SALES
 - PURCHASING
 - USER
 
-Authentication Flow
+**Authentication Flow**
 
+```
 User
  │
  ▼
@@ -150,3 +159,4 @@ JWT Middleware
  │
  ▼
 Authorization
+```
