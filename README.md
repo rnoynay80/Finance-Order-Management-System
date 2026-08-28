@@ -255,12 +255,3 @@ Currently Working On
 ## **11. Roadmap**
 
 Roadmap → [ROADMAP.md](ROADMAP.md)
-
-
---
-
-If you'd like, I can also:
-
-- Create a ROADMAP.md with the phased roadmap and milestones.
-- Add a short Technology Stack summary using the repository language composition (TypeScript 82.1%, JavaScript 17.9%).
-- Add a table of contents and badges to the README.
