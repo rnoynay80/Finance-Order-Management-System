@@ -1,169 +1,152 @@
-# Project Roadmap
+# Finance & Order Management System (FOMS)
+Project Roadmap
 
-## Our updated project vision
+A full-stack Finance & Order Management System designed to demonstrate modern software engineering, API development, database integration, automated testing, security, CI/CD, and Quality Engineering practices.
 
-An agentic Finance & Order Management System with a full-stack application, REST APIs, intelligent business agents, and an integrated AI-assisted quality engineering framework covering UI, API, end-to-end testing and analysis.
 
----
+🏗️ Phase 0 — Project Foundation
+Objective
 
-## Phase 1 — Foundation
+Set up the project structure, development environment, Git repository, and engineering standards.
 
-**We're currently here:**
+Tasks
 
-- ✅ Backend
-- ✅ Express
-- ✅ TypeScript
-- ✅ Health API
-- ✅ Playwright API testing
+- Create GitHub repository
+- Create project structure
+- Set up Node.js and npm
+- Set up TypeScript
+- Set up Express
+- Configure Git
+- Create .gitignore
+- Set up Playwright
+- Configure test directories
+- Create initial README
+- Create project documentation structure
+- Define coding standards
+- Define branching strategy
 
----
+Target Structure
 
-## Phase 2 — Core application
-
-**We'll build:**
-
-```
-Authentication
-     ↓
-Customers
-     ↓
-Products
-     ↓
-Sales Orders
-     ↓
-Purchase Orders
-     ↓
-Payments
-     ↓
-Transfers
-```
-
----
-
-## Phase 3 — Agentic capabilities
-
-**Then introduce agents:**
-
-- Sales Order Agent
-- Purchase Order Agent
-- Payment Agent
-- Finance/Transfer Agent
-
----
-
-## Phase 4 — Intelligent QA
-
-**This is where we'd really like to take the project:**
-
-```
-              Agentic FOMS
-                    │
-                    ▼
-             QA Intelligence
-                    │
-        ┌───────────┼───────────┐
-        ▼           ▼           ▼
-   Test Agent   Risk Agent   Analysis Agent
-```
-
-**For example, a QA Agent could analyse test results and say:**
-
-> "Sales Order API has experienced three failures in the last five pipeline runs. The failures are concentrated around inventory validation."
-
-That's a much more sophisticated portfolio project than simply saying:
-
-> "I automated some Playwright tests."
-
----
-
-## Architecture
-
-### Application Architecture
-
-```
-                    FOMS
-                     │
-              ┌──────┴──────┐
-              │             │
-          Application     Agents
-              │             │
-      ┌───────┼───────┐     │
-      │       │       │     │
-   Sales   Purchase Payment  │
-   Order    Order            │
-                             │
-              ┌──────────────┼──────────────┐
-              │              │              │
-          Validation      Risk Agent    Reconciliation
-             Agent                         Agent
-```
-
-### Our current architecture
-
-```
-Finance-Order-Management-System
+Finance-Order-Management-System/
 │
-├── app
-│   │
-│   ├── backend          ← TypeScript + Node.js + Express
-│   │
-│   ├── frontend         ← TypeScript (we'll build this)
-│   │
-│   └── database         ← Database/schema/scripts
+├── app/
+│   ├── backend/
+│   ├── frontend/
+│   └── database/
 │
-└── tests
-    │
-    ├── api              ← Playwright + TypeScript
-    ├── e2e              ← Playwright + TypeScript
-    └── ui               ← Playwright + TypeScript
-```
+├── tests/
+│   ├── api/
+│   ├── e2e/
+│   ├── ui/
+│   └── database/
+│
+├── docs/
+│
+├── .github/
+│   └── workflows/
+│
+├── playwright.config.ts
+├── package.json
+├── README.md
+└── ROADMAP.md
 
-### So what are we using?
+🔧 Phase 1 — Backend API Foundation
+Objective
 
-| Component | Technology |
-|-----------|-----------|
-| Backend | TypeScript |
-| Runtime | Node.js |
-| API framework | Express |
-| Frontend | TypeScript + React (planned) |
-| API testing | Playwright + TypeScript |
-| UI/E2E testing | Playwright + TypeScript |
-| Database | We'll decide shortly |
-| CI/CD | GitHub Actions |
-| AI/Agents | We'll introduce later |
+Build the core backend API using Node.js, TypeScript, and Express.
 
-**TypeScript is the common language across almost the entire project.**
+Tasks
 
----
+- Create Express server
+- Configure TypeScript
+- Configure development server
+- Configure API port
+- Create /health endpoint
+- Create API routing structure
+- Create controller structure
+- Create service layer
+- Create repository/data-access layer
+- Add centralized error handling
+- Add request validation
+- Add HTTP status standards
+- Add structured logging
+- Add environment configuration
+- Add API versioning
 
-### QA Architecture
+Target Architecture
 
-```
-                 FOMS
-                  │
-       ┌──────────┴──────────┐
-       │                     │
-   Application             Agents
-       │                     │
-       │              ┌──────┼──────┐
-       │              │      │      │
-       │           Sales  Finance  Risk
-       │           Agent   Agent   Agent
-       │
-       └──────────┬──────────
-                  │
-             QA Framework
-                  │
-      ┌───────────┼────────────┐
-      │           │            │
-     UI          API         Agent
-   Testing     Testing       Testing
-      │           │            │
-      └───────────┼────────────┘
-                  │
-              E2E Testing
-```
+Client
+  │
+  ▼
+Routes
+  │
+  ▼
+Controllers
+  │
+  ▼
+Services
+  │
+  ▼
+Repositories
+  │
+  ▼
+Database
 
----
+🔐 Phase 2 — Authentication & Authorization
+Objective
 
-**You can edit this file directly on GitHub or update it in a PR. If you want, I can update the roadmap when you tell me which phases or tasks have changed.**
+Implement secure user authentication and role-based authorization.
+
+Tasks
+
+- Create login endpoint
+- Test valid login
+- Test invalid credentials
+- Create user model
+- Store users in database
+- Implement password hashing
+- Implement JWT authentication
+- Create authentication middleware
+- Create protected endpoints
+- Create /api/users/me
+- Implement logout/token handling
+- Implement role-based authorization
+- Define user roles
+- Test unauthorized requests
+- Test forbidden requests
+- Test expired/invalid tokens
+
+Example Roles
+- ADMIN
+- FINANCE
+- SALES
+- PURCHASING
+- USER
+
+Authentication Flow
+
+User
+ │
+ ▼
+Login
+ │
+ ▼
+Validate Credentials
+ │
+ ▼
+Generate JWT
+ │
+ ▼
+Return Token
+ │
+ ▼
+Client
+ │
+ ▼
+Protected API
+ │
+ ▼
+JWT Middleware
+ │
+ ▼
+Authorization
