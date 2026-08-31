@@ -1,8 +1,53 @@
-import express from 'express';
-import { login } from '../controllers/authController';
+import { Request, Response } from 'express';
+import { users } from '../data/users';
+import { generateToken } from '../utils/jwt';
+import { AuthenticatedRequest } from '../middleware/authMiddleware';
 
-const router = express.Router();
+export const login = (req: any, res: Response) => {
+  const { username, password } = req.body;
 
-router.post('/login', login);
+  if (!username || !password) {
+    return res.status(400).json({
+      success: false,
+      message: 'Username and password required'
+    });
+  }
 
-export default router;
+  const user = users.find(
+    u => u.username === username &&
+         u.password === password
+  );
+
+  if (!user) {
+    return res.status(401).json({
+      success: false,
+      message: 'Invalid credentials'
+    });
+  }
+
+  const token = generateToken({
+    id: user.id,
+    username: user.username,
+    role: user.role
+  });
+
+  return res.json({
+    success: true,
+    user: {
+      id: user.id,
+      username: user.username,
+      role: user.role
+    },
+    token
+  });
+};
+
+export const getMe = (
+  req: AuthenticatedRequest,
+  res: Response
+) => {
+  return res.json({
+    success: true,
+    user: req.user
+  });
+};

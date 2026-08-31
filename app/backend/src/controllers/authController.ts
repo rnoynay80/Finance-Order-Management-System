@@ -1,5 +1,6 @@
 import { Request, Response } from 'express';
 import { users } from '../data/users';
+import { generateToken } from '../utils/jwt';
 
 export const login = (req: Request, res: Response) => {
   const { username, password } = req.body;
@@ -22,13 +23,20 @@ export const login = (req: Request, res: Response) => {
       message: 'Invalid credentials'
     });
   }
+ 
+ const token = generateToken({
+  id: user.id,
+  username: user.username,
+  role: user.role
+});
 
   return res.json({
-    success: true,
-    user: {
-      id: user.id,
-      username: user.username,
-      role: user.role
-    }
-  });
+  success: true,
+  user: {
+    id: user.id,
+    username: user.username,
+    role: user.role
+  },
+  token
+});
 };
