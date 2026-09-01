@@ -6,7 +6,7 @@ This README contains the top-level project information and Quality Engineering f
 
 Finance & Order Management System (FOMS) is a full-stack business application designed to manage finance and order-related processes within an organisation.
 
-The system is being developed as a practical demonstration of a modern enterprise application, covering backend API development, authentication, database management, order processing, financial transactions, and comprehensive quality engineering practices.
+The system is being developed as a practical demonstration of a modern enterprise application, covering backend API development, authentication, database management, order processing, financial transactions, AI-driven agents, and comprehensive testing.
 
 Core business capabilities:
 
@@ -21,6 +21,7 @@ Core business capabilities:
 - Financial account management
 - Financial transactions and fund transfers
 - Audit and transaction history
+- AI-powered order and payment processing agents
 
 The project is also being developed with a strong Quality Engineering (QE) focus. Automated testing is integrated throughout the development lifecycle rather than being treated as a separate activity.
 
@@ -35,6 +36,7 @@ Application Development
 - Implement sales and purchase order workflows
 - Implement invoice and payment processing
 - Implement financial transactions and fund transfers
+- Develop Python-based AI agents for order and payment processing
 
 Quality Engineering
 
@@ -57,7 +59,7 @@ DevOps & Cloud
 
 Professional / Portfolio Objective
 
-The project is intended to demonstrate enterprise-style Quality Engineering practices including test strategy, risk-based testing, API automation, database validation, E2E testing, security testing, and CI/CD integration.
+The project is intended to demonstrate enterprise-style Quality Engineering practices including test strategy, risk-based testing, API automation, database validation, E2E testing, security testing, and AI integration in business workflows.
 
 ## **3. Technology Stack**
 
@@ -90,69 +92,103 @@ The project is intended to demonstrate enterprise-style Quality Engineering prac
 
 ## **4. Current Architecture**
 
-The current implementation focuses on the backend API and automated API testing.
+```
+                              ┌──────────────────────┐
+                              │        USERS         │
+                              └──────────┬───────────┘
+                                         │
+                                      HTTPS
+                                         │
+                                         ▼
+                              ┌──────────────────────┐
+                              │    React Frontend    │
+                              │    TypeScript        │
+                              └──────────┬───────────┘
+                                         │
+                                  REST / JSON API
+                                         │
+                                         ▼
+┌─────────────────────────────────────────────────────────────────────┐
+│                    ASP.NET CORE / C# BACKEND                       │
+│                                                                     │
+│  ┌───────────┐  ┌──────────┐  ┌──────────┐  ┌───────────────────┐ │
+│  │   Auth    │  │ Customers│  │  Orders  │  │ Payments/Finance │ │
+│  │  Module   │  │  Module  │  │  Module  │  │      Module       │ │
+│  └─────┬─────┘  └────┬─────┘  └────┬─────┘  └─────────┬─────────┘ │
+│        │             │             │                  │           │
+│        └─────────────┴─────────────┴──────────────────┘           │
+│                              │                                     │
+│                              ▼                                     │
+│                    ┌────────────────────┐                          │
+│                    │ Business Services  │                          │
+│                    │ C# / Application   │                          │
+│                    │ Layer              │                          │
+│                    └─────────┬──────────┘                          │
+│                              │                                     │
+│                    ┌─────────▼──────────┐                          │
+│                    │ Entity Framework   │                          │
+│                    │ Core               │                          │
+│                    └─────────┬──────────┘                          │
+└──────────────────────────────┼──────────────────────────────────────┘
+                               │
+                               ▼
+                     ┌──────────────────┐
+                     │    SQL SERVER    │
+                     │                  │
+                     │ Users            │
+                     │ Customers        │
+                     │ Products         │
+                     │ Sales Orders     │
+                     │ Purchase Orders  │
+                     │ Invoices         │
+                     │ Payments         │
+                     │ Transactions     │
+                     └──────────────────┘
 
-                         FOMS
-                          │
-                          ▼
-                  Express REST API
-                          │
-                ┌───────────┴───────────┐
-                │                       │
-           Health API             Authentication
-                │                       │
-                │                 /api/auth
-                │                       │
-                └───────────┬───────────┘
-                            │
-                      Playwright
-                      API Tests
-                            │
-                      Test Results
 
-Current Backend Structure
+                         AI AGENT LAYER
+                               ▲
+                               │
+                         REST / Events
+                               │
+               ┌───────────────┴────────────────┐
+               │                                │
+       ┌───────▼────────┐              ┌───────▼────────┐
+       │ Python AI      │              │ Python AI      │
+       │ Agent Service  │              │ Agent Service  │
+       │                │              │                │
+       │ Order Agent    │              │ Payment Agent  │
+       │ Finance Agent  │              │ Risk Agent     │
+       └────────────────┘              └────────────────┘
+```
 
-Client / Test
+### Architecture Components
 
-    │
-    ▼
-Express Server
+**Frontend Layer**
+- React application with TypeScript
+- User interface for all business operations
+- Secure HTTPS communication with backend
 
-    │
-    ├── GET /health
-    │
-    └── /api/auth
-            │
-            └── Login API
+**Backend Layer (ASP.NET Core)**
+- **Auth Module**: User authentication and authorization
+- **Customers Module**: Customer management and profiles
+- **Orders Module**: Sales and purchase order management
+- **Payments/Finance Module**: Payment processing and financial operations
+- **Business Services Layer**: Core application logic
+- **Entity Framework Core**: ORM for database operations
 
-Current Test Architecture
+**Database Layer**
+- SQL Server Developer Edition
+- Relational database with normalized schema
+- Tables: Users, Customers, Products, Sales Orders, Purchase Orders, Invoices, Payments, Transactions
 
-Playwright is configured to automatically start or reuse the FOMS backend before executing API tests.
-
-Playwright
-    │
-    ▼
-webServer Configuration
-    │
-    ▼
-app/backend
-    │
-    ▼
-npm run dev
-    │
-    ▼
-http://localhost:3000/health
-    │
-    ▼
-API Tests
-
-Current Test Status
-
-The API test suite is currently passing:
-
-Running 6 tests using 4 workers
-
-6 passed (856ms)
+**AI Agent Layer**
+- Python-based microservices
+- **Order Agent**: Automates order processing and workflows
+- **Finance Agent**: Handles financial transactions and fund transfers
+- **Payment Agent**: Manages payment processing and reconciliation
+- **Risk Agent**: Analyzes and flags high-risk transactions
+- REST/Event-driven communication with backend
 
 ## **5. Project Structure**
 
