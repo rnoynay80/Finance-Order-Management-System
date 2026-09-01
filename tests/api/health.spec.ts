@@ -4,7 +4,7 @@ test.describe('FOMS Health API', () => {
 
   test('should return a healthy application status', async ({ request }) => {
 
-    const response = await request.get('http://localhost:3000/api/health');
+    const response = await request.get('/health');
 
     expect(response.status()).toBe(200);
 

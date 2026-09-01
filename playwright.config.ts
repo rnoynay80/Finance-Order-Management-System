@@ -22,10 +22,10 @@ export default defineConfig({
   reporter: 'html',
 
   /* Shared settings for all projects */
-  use: {
-    /* Collect trace when retrying the failed test */
-    trace: 'on-first-retry',
-  },
+ use: {
+  baseURL: 'http://localhost:5134',
+  trace: 'on-first-retry',
+},
 
   /* Configure projects */
   projects: [
@@ -57,12 +57,12 @@ export default defineConfig({
   ],
 
   // Start the FOMS backend automatically before running tests
-  webServer: {
-    command: 'npm run dev',
-    cwd: 'app/backend',
-    url: 'http://localhost:3000/api/health',
-    reuseExistingServer: !process.env.CI,
-  },
+ webServer: {
+  command: 'dotnet run',
+  cwd: 'app/backend/FOMS.API',
+  url: 'http://localhost:5134/health',
+  reuseExistingServer: !process.env.CI,
+},
 });
 
 
