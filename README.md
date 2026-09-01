@@ -6,7 +6,7 @@ This README contains the top-level project information and Quality Engineering f
 
 Finance & Order Management System (FOMS) is a full-stack business application designed to manage finance and order-related processes within an organisation.
 
-The system is being developed as a practical demonstration of a modern enterprise application, covering backend API development, authentication, database management, order processing, financial transactions, automated testing, security, and CI/CD.
+The system is being developed as a practical demonstration of a modern enterprise application, covering backend API development, authentication, database management, order processing, financial tra[...]
 
 Core business capabilities:
 
@@ -22,7 +22,7 @@ Core business capabilities:
 - Financial transactions and fund transfers
 - Audit and transaction history
 
-The project is also being developed with a strong Quality Engineering (QE) focus. Automated testing is integrated throughout the development lifecycle rather than being treated as a separate activity.
+The project is also being developed with a strong Quality Engineering (QE) focus. Automated testing is integrated throughout the development lifecycle rather than being treated as a separate activ[...]
 
 ## **2. Objectives**
 
@@ -57,68 +57,36 @@ DevOps & Cloud
 
 Professional / Portfolio Objective
 
-The project is intended to demonstrate enterprise-style Quality Engineering practices including test strategy, risk-based testing, API automation, database validation, E2E testing, security testing, performance testing, CI/CD quality gates, test reporting, and production readiness.
+The project is intended to demonstrate enterprise-style Quality Engineering practices including test strategy, risk-based testing, API automation, database validation, E2E testing, security testin[...]
 
 ## **3. Technology Stack**
 
-Backend
-
-| Technology | Purpose | Status |
-|---|---:|---:|
-| Node.js | Backend runtime | ✅ Implemented |
-| TypeScript | Application development language | ✅ Implemented |
-| Express.js | REST API framework | ✅ Implemented |
-
-Testing
-
-| Technology | Purpose | Status |
-|---|---:|---:|
-| Playwright | API and end-to-end automation | ✅ Implemented |
-| TypeScript | Test development | ✅ Implemented |
-
-Database
-
-| Technology | Purpose | Status |
-|---|---:|---:|
-| PostgreSQL | Relational database | ⏳ Planned |
-
-Frontend
-
-| Technology | Purpose | Status |
-|---|---:|---:|
-| React | Web application UI | ⏳ Planned |
-
-CI/CD
-
-| Technology | Purpose | Status |
-|---|---:|---:|
-| GitHub Actions | Continuous Integration / Delivery | ⏳ Planned |
-
-Security
-
-| Technology | Purpose | Status |
-|---|---:|---:|
-| npm audit | Dependency vulnerability checking | ⏳ Planned |
-| Checkmarx | Static Application Security Testing | ⏳ Planned |
-| GitHub Security | Repository security scanning | ⏳ Planned |
-
-Cloud
-
-| Technology | Purpose | Status |
-|---|---:|---:|
-| AWS | Cloud platform | ⏳ Planned |
-| AWS Lambda | Serverless processing | ⏳ Planned |
-| Amazon RDS | Managed relational database | ⏳ Planned |
-| Amazon S3 | Object/file storage | ⏳ Planned |
-| Amazon CloudWatch | Monitoring and logging | ⏳ Planned |
-| AWS Secrets Manager | Secrets management | ⏳ Planned |
-
-Version Control
-
-| Technology | Purpose | Status |
-|---|---:|---:|
-| Git | Source control | ✅ Implemented |
-| GitHub | Source code repository | ✅ Implemented |
+```
+┌─────────────────────────────────────────────────────┐
+│                 FOMS TECHNOLOGY STACK                │
+├─────────────────────────────────────────────────────┤
+│                                                     │
+│ Frontend       React + TypeScript                   │
+│ Backend        C# + ASP.NET Core Web API            │
+│ ORM            Entity Framework Core                │
+│ Database       SQL Server Developer                 │
+│                                                     │
+│ AI Layer       Python                               │
+│ AI Agents      Feature-specific agents              │
+│                                                     │
+│ API Testing    Playwright + TypeScript              │
+│ UI Testing     Playwright + TypeScript              │
+│ E2E Testing    Playwright + TypeScript              │
+│                                                     │
+│ CI/CD          GitHub Actions                       │
+│ Security       Checkmarx + dependency scanning      │
+│ Source Control Git / GitHub                         │
+│ IDE            VS Code                              │
+│                                                     │
+│ Cloud          AWS                                  │
+│                                                     │
+└─────────────────────────────────────────────────────┘
+```
 
 ## **4. Current Architecture**
 
@@ -129,18 +97,18 @@ The current implementation focuses on the backend API and automated API testing.
                           ▼
                   Express REST API
                           │
-              ┌───────────┴───────────┐
-              │                       │
-         Health API             Authentication
-              │                       │
-              │                 /api/auth
-              │                       │
-              └───────────┬───────────┘
-                          │
-                    Playwright
-                    API Tests
-                          │
-                    Test Results
+                ┌───────────┴───────────┐
+                │                       │
+           Health API             Authentication
+                │                       │
+                │                 /api/auth
+                │                       │
+                └───────────┬───────────┘
+                            │
+                      Playwright
+                      API Tests
+                            │
+                      Test Results
 
 Current Backend Structure
 
@@ -221,7 +189,7 @@ Quick steps to run the project locally (backend + tests):
 
 Quality is integrated across the development lifecycle with a staged approach:
 
-Requirements → Development → API Testing → Database Validation → Integration Testing → End-to-End Testing → Security Testing → Performance Testing → CI/CD Quality Gate → Deployment
+Requirements → Development → API Testing → Database Validation → Integration Testing → End-to-End Testing → Security Testing → Performance Testing → CI/CD Quality Gate → Deploym[...]
 
 Automated testing will be expanded alongside features so new functionality is developed with corresponding automated validation.
 
