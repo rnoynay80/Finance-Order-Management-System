@@ -3,7 +3,7 @@ import { test, expect } from '@playwright/test';
 test.describe('FOMS Authentication API', () => {
 
   test('should login successfully with valid credentials', async ({ request }) => {
-    const response = await request.post('http://localhost:3000/api/auth/login', {
+    const response = await request.post('http://localhost:5134/api/auth/login', {
       data: {
         username: 'admin',
         password: 'Password123'
@@ -22,7 +22,7 @@ test.describe('FOMS Authentication API', () => {
 
 
   test('should reject login with incorrect password', async ({ request }) => {
-    const response = await request.post('http://localhost:3000/api/auth/login', {
+    const response = await request.post('http://localhost:5134/api/auth/login', {
       data: {
         username: 'admin',
         password: 'WrongPassword'
@@ -39,7 +39,7 @@ test.describe('FOMS Authentication API', () => {
 
 
   test('should reject login for unknown user', async ({ request }) => {
-    const response = await request.post('http://localhost:3000/api/auth/login', {
+    const response = await request.post('http://localhost:5134/api/auth/login', {
       data: {
         username: 'unknown',
         password: 'Password123'
@@ -56,7 +56,7 @@ test.describe('FOMS Authentication API', () => {
 
 
   test('should reject login when password is missing', async ({ request }) => {
-    const response = await request.post('http://localhost:3000/api/auth/login', {
+    const response = await request.post('http://localhost:5134/api/auth/login', {
       data: {
         username: 'admin'
       }
@@ -72,7 +72,7 @@ test.describe('FOMS Authentication API', () => {
 
 
   test('should reject login when username is missing', async ({ request }) => {
-    const response = await request.post('http://localhost:3000/api/auth/login', {
+    const response = await request.post('http://localhost:5134/api/auth/login', {
       data: {
         password: 'Password123'
       }
