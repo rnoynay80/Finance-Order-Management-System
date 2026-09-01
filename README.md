@@ -6,7 +6,7 @@ This README contains the top-level project information and Quality Engineering f
 
 Finance & Order Management System (FOMS) is a full-stack business application designed to manage finance and order-related processes within an organisation.
 
-The system is being developed as a practical demonstration of a modern enterprise application, covering backend API development, authentication, database management, order processing, financial transactions, AI-driven agents, and comprehensive testing.
+The system is being developed as a practical demonstration of a modern enterprise application, covering backend API development, authentication, database management, order processing, financial transactions, and AI-powered business automation.
 
 Core business capabilities:
 
@@ -27,39 +27,59 @@ The project is also being developed with a strong Quality Engineering (QE) focus
 
 ## **2. Objectives**
 
-Application Development
+### **Application Development**
 
-- Build a realistic transaction-based business application
-- Develop RESTful APIs using TypeScript and Express
-- Implement secure authentication and authorization
-- Design and integrate a relational database
+Build a realistic transaction-based Finance & Order Management System (FOMS)
+
+- Develop RESTful APIs using C# and ASP.NET Core Web API
+- Implement a modular and maintainable enterprise application architecture
+- Implement secure authentication and role-based authorization
+- Design and integrate a relational SQL Server database
+- Use Entity Framework Core for application data access
 - Implement sales and purchase order workflows
+- Implement customer and product management
 - Implement invoice and payment processing
 - Implement financial transactions and fund transfers
-- Develop Python-based AI agents for order and payment processing
+- Implement transaction integrity, validation, auditability, and business rules
+- Develop a Python-based AI agent layer supporting individual business capabilities
+- Implement feature-specific AI agents for order processing, payments, finance, risk, and workflow assistance
+- Integrate AI agents with the core C# application through APIs and/or events
+- Maintain the C# application as the system of record while using AI agents for analysis, recommendations, and intelligent automation
 
-Quality Engineering
+### **Quality Engineering**
 
-- Build automated API tests using Playwright and TypeScript
-- Implement end-to-end testing
-- Validate database transactions and data integrity
+Build a maintainable automated test framework using Playwright and TypeScript
+
+- Implement automated API testing against the ASP.NET Core APIs
+- Implement UI testing for the React frontend
+- Implement end-to-end testing across complete business workflows
+- Implement integration testing between application components
+- Validate database transactions, data integrity, and business outcomes
 - Implement functional and regression testing
-- Implement security testing
-- Implement performance testing
-- Integrate automated quality checks into CI/CD
+- Implement authentication and authorization testing
+- Implement security testing and vulnerability validation
+- Implement performance and reliability testing
+- Implement negative, boundary, and error-condition testing
+- Implement testing of AI agent APIs, workflows, and responses where appropriate
+- Integrate automated quality checks into the CI/CD pipeline
+- Generate test results and quality reports to support release decisions
+- Apply risk-based testing and production-readiness practices
 
-DevOps & Cloud
+### **DevOps & Cloud**
 
-- Implement Git-based development practices
+- Implement Git-based development and branching practices
 - Build a CI/CD pipeline using GitHub Actions
-- Integrate automated testing into the pipeline
-- Introduce security scanning
-- Explore AWS cloud architecture and services
-- Demonstrate deployment and production-readiness practices
-
-Professional / Portfolio Objective
-
-The project is intended to demonstrate enterprise-style Quality Engineering practices including test strategy, risk-based testing, API automation, database validation, E2E testing, security testing, and AI integration in business workflows.
+- Integrate automated API, UI, integration, and E2E testing into the pipeline
+- Integrate code quality and security checks into CI/CD
+- Implement dependency and vulnerability scanning
+- Introduce application security testing using tools such as Checkmarx
+- Implement build, test, quality-gate, and deployment stages
+- Explore and implement appropriate AWS cloud services
+- Implement cloud-based application deployment
+- Introduce cloud logging, monitoring, and operational visibility
+- Apply secure configuration and secrets-management practices
+- Demonstrate deployment, rollback, environment management, and production-readiness practices
+- Establish a foundation for future scalability and cloud-native capabilities
 
 ## **3. Technology Stack**
 
@@ -93,22 +113,22 @@ The project is intended to demonstrate enterprise-style Quality Engineering prac
 ## **4. Current Architecture**
 
 ```
-                              ┌──────────────────────┐
-                              │        USERS         │
-                              └──────────┬───────────┘
-                                         │
-                                      HTTPS
-                                         │
-                                         ▼
-                              ┌──────────────────────┐
-                              │    React Frontend    │
-                              │    TypeScript        │
-                              └──────────┬───────────┘
-                                         │
-                                  REST / JSON API
-                                         │
-                                         ▼
-┌─────────────────────────────────────────────────────────────────────┐
+                               ┌──────────────────────┐
+                               │        USERS         │
+                               └──────────┬───────────┘
+                                          │
+                                       HTTPS
+                                          │
+                                          ▼
+                               ┌──────────────────────┐
+                               │    React Frontend    │
+                               │    TypeScript        │
+                               └──────────┬───────────┘
+                                          │
+                                   REST / JSON API
+                                          │
+                                          ▼
+┌────────────────────────────────────────────────────────────────────┐
 │                    ASP.NET CORE / C# BACKEND                       │
 │                                                                     │
 │  ┌───────────┐  ┌──────────┐  ┌──────────┐  ┌───────────────────┐ │
@@ -129,37 +149,37 @@ The project is intended to demonstrate enterprise-style Quality Engineering prac
 │                    │ Entity Framework   │                          │
 │                    │ Core               │                          │
 │                    └─────────┬──────────┘                          │
-└──────────────────────────────┼──────────────────────────────────────┘
-                               │
-                               ▼
-                     ┌──────────────────┐
-                     │    SQL SERVER    │
-                     │                  │
-                     │ Users            │
-                     │ Customers        │
-                     │ Products         │
-                     │ Sales Orders     │
-                     │ Purchase Orders  │
-                     │ Invoices         │
-                     │ Payments         │
-                     │ Transactions     │
-                     └──────────────────┘
+└──────────────────────────────┼─────────────────────────────────────┘
+                                │
+                                ▼
+                      ┌──────────────────┐
+                      │    SQL SERVER    │
+                      │                  │
+                      │ Users            │
+                      │ Customers        │
+                      │ Products         │
+                      │ Sales Orders     │
+                      │ Purchase Orders  │
+                      │ Invoices         │
+                      │ Payments         │
+                      │ Transactions     │
+                      └──────────────────┘
 
 
-                         AI AGENT LAYER
-                               ▲
-                               │
-                         REST / Events
-                               │
-               ┌───────────────┴────────────────┐
-               │                                │
-       ┌───────▼────────┐              ┌───────▼────────┐
-       │ Python AI      │              │ Python AI      │
-       │ Agent Service  │              │ Agent Service  │
-       │                │              │                │
-       │ Order Agent    │              │ Payment Agent  │
-       │ Finance Agent  │              │ Risk Agent     │
-       └────────────────┘              └────────────────┘
+                          AI AGENT LAYER
+                                ▲
+                                │
+                          REST / Events
+                                │
+                ┌───────────────┴────────────────┐
+                │                                │
+        ┌───────▼────────┐              ┌───────▼────────┐
+        │ Python AI      │              │ Python AI      │
+        │ Agent Service  │              │ Agent Service  │
+        │                │              │                │
+        │ Order Agent    │              │ Payment Agent  │
+        │ Finance Agent  │              │ Risk Agent     │
+        └────────────────┘              └────────────────┘
 ```
 
 ### Architecture Components
