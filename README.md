@@ -6,7 +6,7 @@ This README contains the top-level project information and Quality Engineering f
 
 Finance & Order Management System (FOMS) is a full-stack business application designed to manage finance and order-related processes within an organisation.
 
-The system is being developed as a practical demonstration of a modern enterprise application, covering backend API development, authentication, database management, order processing, financial tra[...]
+The system is being developed as a practical demonstration of a modern enterprise application, covering backend API development, authentication, database management, order processing, financial transactions, and comprehensive quality engineering practices.
 
 Core business capabilities:
 
@@ -22,7 +22,7 @@ Core business capabilities:
 - Financial transactions and fund transfers
 - Audit and transaction history
 
-The project is also being developed with a strong Quality Engineering (QE) focus. Automated testing is integrated throughout the development lifecycle rather than being treated as a separate activ[...]
+The project is also being developed with a strong Quality Engineering (QE) focus. Automated testing is integrated throughout the development lifecycle rather than being treated as a separate activity.
 
 ## **2. Objectives**
 
@@ -57,7 +57,7 @@ DevOps & Cloud
 
 Professional / Portfolio Objective
 
-The project is intended to demonstrate enterprise-style Quality Engineering practices including test strategy, risk-based testing, API automation, database validation, E2E testing, security testin[...]
+The project is intended to demonstrate enterprise-style Quality Engineering practices including test strategy, risk-based testing, API automation, database validation, E2E testing, security testing, and CI/CD integration.
 
 ## **3. Technology Stack**
 
@@ -185,13 +185,60 @@ Quick steps to run the project locally (backend + tests):
 
 (Additional business APIs are planned: sales-orders, purchase-orders, transfers)
 
-## **9. Quality Engineering**
+## **9. Test Structure**
 
-Quality is integrated across the development lifecycle with a staged approach:
+The test suite is organized using Playwright with a comprehensive, modular structure:
 
-Requirements → Development → API Testing → Database Validation → Integration Testing → End-to-End Testing → Security Testing → Performance Testing → CI/CD Quality Gate → Deploym[...]
+```
+tests/
+│
+└── playwright/
+    ├── api/
+    │   ├── auth/                 # Authentication API tests
+    │   ├── orders/               # Order management API tests
+    │   ├── payments/             # Payment processing API tests
+    │   └── users/                # User management API tests
+    │
+    ├── ui/
+    │   ├── login/                # Login page UI tests
+    │   ├── orders/               # Orders page UI tests
+    │   └── payments/             # Payments page UI tests
+    │
+    ├── e2e/
+    │   ├── sales-order/          # End-to-end sales order workflows
+    │   ├── purchase-order/       # End-to-end purchase order workflows
+    │   └── payment/              # End-to-end payment workflows
+    │
+    ├── fixtures/                 # Shared test data and fixtures
+    ├── helpers/                  # Utility functions and helpers
+    └── playwright.config.ts      # Playwright configuration
+```
 
-Automated testing will be expanded alongside features so new functionality is developed with corresponding automated validation.
+### Test Categories
+
+**API Tests** (`tests/playwright/api/`)
+- Validate REST API endpoints
+- Test request/response contracts
+- Verify error handling and status codes
+- Validate data payloads and types
+
+**UI Tests** (`tests/playwright/ui/`)
+- Test user interface components
+- Validate page navigation and interactions
+- Verify visual elements and user workflows
+- Test responsive design behaviors
+
+**E2E Tests** (`tests/playwright/e2e/`)
+- Test complete business workflows
+- Validate cross-system integrations
+- Test end-to-end user journeys
+- Verify business logic and data consistency
+
+### Test Infrastructure
+
+- **Fixtures**: Reusable test data and setup/teardown logic
+- **Helpers**: Common utility functions for test operations
+- **Configuration**: Centralized Playwright settings and environment management
 
 ## **10. Current Status**
 
