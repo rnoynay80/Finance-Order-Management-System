@@ -32,3 +32,12 @@ C:\Users\rocci\Projects\Finance-Order-Management-System\app\backend\FOMS.API\obj
 C:\Users\rocci\Projects\Finance-Order-Management-System\app\backend\FOMS.API\obj\Debug\net10.0\FOMS.API.pdb
 C:\Users\rocci\Projects\Finance-Order-Management-System\app\backend\FOMS.API\obj\Debug\net10.0\FOMS.API.genruntimeconfig.cache
 C:\Users\rocci\Projects\Finance-Order-Management-System\app\backend\FOMS.API\obj\Debug\net10.0\ref\FOMS.API.dll
+C:\Users\rocci\Projects\Finance-Order-Management-System\app\backend\FOMS.API\bin\Debug\net10.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\rocci\Projects\Finance-Order-Management-System\app\backend\FOMS.API\bin\Debug\net10.0\Microsoft.Bcl.Cryptography.dll
+C:\Users\rocci\Projects\Finance-Order-Management-System\app\backend\FOMS.API\bin\Debug\net10.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\rocci\Projects\Finance-Order-Management-System\app\backend\FOMS.API\bin\Debug\net10.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\rocci\Projects\Finance-Order-Management-System\app\backend\FOMS.API\bin\Debug\net10.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\rocci\Projects\Finance-Order-Management-System\app\backend\FOMS.API\bin\Debug\net10.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\rocci\Projects\Finance-Order-Management-System\app\backend\FOMS.API\bin\Debug\net10.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\rocci\Projects\Finance-Order-Management-System\app\backend\FOMS.API\bin\Debug\net10.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\rocci\Projects\Finance-Order-Management-System\app\backend\FOMS.API\bin\Debug\net10.0\System.IdentityModel.Tokens.Jwt.dll

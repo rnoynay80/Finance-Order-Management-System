@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("FOMS.API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+235069dc58cb31c71e5cf25921d92e87bd1b6dc1")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ee29ae98ccc3e3e6b4a1a0b99ec63c2d7c2482ab")]
 [assembly: System.Reflection.AssemblyProductAttribute("FOMS.API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FOMS.API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
