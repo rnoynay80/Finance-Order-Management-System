@@ -1,3 +1,6 @@
+# .NET build artifacts
+**/bin/
+**/obj/
 
 # Dependencies
 node_modules/
